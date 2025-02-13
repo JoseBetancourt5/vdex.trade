@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 import { Button } from '@/components/ui/button';
@@ -33,27 +34,10 @@ const moreLinks = [
 export function Navbar() {
   return (
     <header className="top-0 z-50 sticky bg-black/80 w-full">
-      <div className="flex items-center mx-auto h-16 container">
+      <div className="flex items-center mx-auto py-4 h-16 container">
         <div className="w-1/4">
           <Link href="/" className="flex items-center gap-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 32 32"
-              fill="none"
-              className="w-8 h-8"
-            >
-              <path
-                d="M8 4C8 2.89543 8.89543 2 10 2H22C23.1046 2 24 2.89543 24 4V28C24 29.1046 23.1046 30 22 30H10C8.89543 30 8 29.1046 8 28V4Z"
-                fill="#7C3AED"
-              />
-              <path
-                d="M13 8C13 6.89543 13.8954 6 15 6H27C28.1046 6 29 6.89543 29 8V24C29 25.1046 28.1046 26 27 26H15C13.8954 26 13 25.1046 13 24V8Z"
-                fill="#4F46E5"
-              />
-            </svg>
-            <span className="font-bold text-white text-xl">VDEX</span>
+            <Image src="/vdex-logo.png" alt="VDEX Logo" width={100} height={100} />
           </Link>
         </div>
 
@@ -100,7 +84,7 @@ export function Navbar() {
         </div>
 
         <div className="flex justify-end w-1/4">
-          <Button className="bg-transparent hover:bg-transparent shadow-[inset_0_0_10px_rgba(124,58,237,0.8),0_0_10px_rgba(124,58,237,0.8)] border border-primary rounded-full text-white hover:scale-105 transition-all duration-300">
+          <Button className="bg-transparent hover:bg-transparent shadow-[inset_0_0_10px_rgba(124,58,237,0.8),0_0_10px_rgba(124,58,237,0.8)] px-5 border border-primary rounded-full text-white hover:scale-105 transition-all duration-300">
             Join Whitelist
           </Button>
         </div>
