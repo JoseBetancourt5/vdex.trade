@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -34,7 +34,7 @@ const moreLinks = [
 export function Navbar() {
   return (
     <header className="top-0 z-50 sticky bg-black/80 w-full">
-      <div className="flex items-center mx-auto py-4 h-16 container">
+      <div className="flex items-center mx-auto py-10 h-16 container">
         <div className="w-1/4">
           <Link href="/" className="flex items-center gap-2">
             <Image src="/vdex-logo.png" alt="VDEX Logo" width={100} height={100} />
@@ -63,13 +63,13 @@ export function Navbar() {
                   More
                 </NavigationMenuTrigger>
                 <NavigationMenuContent className="bg-black/80 w-full">
-                  <ul className="gap-4 grid px-2 py-3">
+                  <ul className="gap-4 grid p-4">
                     {moreLinks.map((link) => (
                       <li key={link.title}>
                         <NavigationMenuLink asChild>
                           <Link
                             href={link.href}
-                            className="block rounded-md text-white hover:text-primary no-underline leading-none select-none"
+                            className="block rounded-md text-white hover:text-primary text-lg no-underline leading-none select-non"
                           >
                             {link.title}
                           </Link>
@@ -84,9 +84,17 @@ export function Navbar() {
         </div>
 
         <div className="flex justify-end w-1/4">
-          <Button className="bg-transparent hover:bg-transparent shadow-[inset_0_0_10px_rgba(124,58,237,0.8),0_0_10px_rgba(124,58,237,0.8)] px-5 border border-primary rounded-full text-white hover:scale-105 transition-all duration-300">
+          <Link
+            href="https://docs.virtuallabs.network"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              buttonVariants({ variant: 'link' }),
+              'hover:no-underline shadow-[inset_0_0_10px_rgba(124,58,237,0.8),0_0_10px_rgba(124,58,237,0.8)] px-6 py-5 border border-primary rounded-full text-white text-lg hover:scale-105 transition-all duration-300'
+            )}
+          >
             Join Whitelist
-          </Button>
+          </Link>
         </div>
       </div>
     </header>
