@@ -60,7 +60,7 @@ function MobileNavLink({ href, title, isExternal }: NavItem) {
 
 export function Navbar() {
   return (
-    <header className="top-0 z-50 sticky bg-black/80 w-full">
+    <header className="top-0 z-50 sticky bg-black/90 w-full">
       <div className="flex justify-between md:justify-start items-center mx-auto px-4 py-10 h-16 container">
         <div className="w-1/4">
           <Link href="/" className="flex items-center gap-2" prefetch>
