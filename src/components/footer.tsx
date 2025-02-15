@@ -21,7 +21,7 @@ export function Footer() {
               />
             </Link>
             <div className="space-y-4 max-w-xl">
-              <h3 className="text-gray-300 text-lg">
+              <h3 className="text-lg">
                 Join our newsletter to stay up to date on features and releases.
               </h3>
               <div className="flex gap-3">
@@ -49,21 +49,18 @@ export function Footer() {
               <div className="space-y-4">
                 <h3 className="font-semibold text-lg">Resources</h3>
                 <nav className="flex flex-col space-y-3">
-                  <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
+                  <Link href="/blog" className="hover:text-primary transition-colors">
                     Blog
                   </Link>
-                  <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  <Link href="/about" className="hover:text-primary transition-colors">
                     About
                   </Link>
-                  <Link
-                    href="/integrate"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
+                  <Link href="/integrate" className="hover:text-primary transition-colors">
                     Integrate
                   </Link>
                   <Link
                     href="https://docs.virtuallabs.network"
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="hover:text-primary transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -78,7 +75,7 @@ export function Footer() {
                 <nav className="flex flex-col space-y-3">
                   <Link
                     href="https://discord.com/invite/x9PPR2PAEf"
-                    className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 transition-colors"
                   >
                     <Image
                       src="/icons/discord.png"
@@ -90,13 +87,13 @@ export function Footer() {
                   </Link>
                   <Link
                     href="https://x.com/0xVDEX"
-                    className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 transition-colors"
                   >
                     <Image src="/icons/x.avif" alt="X" width={20} height={20} className="w-5 h-5" />
                   </Link>
                   <Link
                     href="https://x.com/0xVDEX"
-                    className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 transition-colors"
                   >
                     <Image
                       src="/icons/zealy.avif"
@@ -108,7 +105,7 @@ export function Footer() {
                   </Link>
                   <Link
                     href="https://linkedin.com/company/vdex"
-                    className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 transition-colors"
                   >
                     <Image
                       src="/icons/linkedin.avif"
@@ -120,7 +117,7 @@ export function Footer() {
                   </Link>
                   <Link
                     href="https://t.me/vdex"
-                    className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 transition-colors"
                   >
                     <Image
                       src="/icons/telegram.avif"
