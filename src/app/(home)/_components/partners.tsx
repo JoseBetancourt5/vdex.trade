@@ -26,7 +26,7 @@ export function Partners() {
         }}
       />
 
-      <Heading variant="h3" size="3xl">
+      <Heading variant="h2" size="3xl">
         Partners
       </Heading>
 

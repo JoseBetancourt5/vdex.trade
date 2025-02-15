@@ -7,7 +7,7 @@ import { Heading, Text } from "@/components/ui/typography";
 export function Audit() {
   return (
     <Section centerContent className="gap-8 my-12 md:my-24">
-      <Heading variant="h3" size="3xl">
+      <Heading variant="h2" size="3xl">
         Audited by
       </Heading>
       <Link
