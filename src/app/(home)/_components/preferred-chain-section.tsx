@@ -17,7 +17,7 @@ const rightChains = chainLogos.slice(3);
 
 export function PreferredChainSection() {
   return (
-    <section className="flex flex-col justify-center items-center space-y-20 sm:space-y-24 px-4 py-12 sm:py-16 min-h-screen overflow-hidden">
+    <section className="flex flex-col justify-center items-center gap-20 sm:gap-24 px-4 min-h-screen overflow-hidden">
       {/* Chain Logos Row */}
       <div className="sm:flex sm:flex-nowrap justify-center items-center gap-4 grid grid-cols-1 w-full max-w-5xl">
         {/* Left Chain Logos */}
