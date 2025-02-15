@@ -51,8 +51,8 @@ export function Navbar() {
           >
             Docs
           </NavLink>
-          <NavLink href="/data-room">About</NavLink>
-          <NavLink href="/form">Integrate</NavLink>
+          <NavLink href="/about">About</NavLink>
+          <NavLink href="/integrate">Integrate</NavLink>
           <NavigationMenu>
             <NavigationMenuList className="gap-2">
               <NavigationMenuItem>

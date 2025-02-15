@@ -19,9 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} antialiased bg-background text-foreground`}>
+      <body
+        className={`${inter.className} antialiased bg-background text-foreground min-h-screen flex flex-col`}
+      >
         <Navbar />
-        {children}
+        <main className="flex-1">{children}</main>
       </body>
     </html>
   );
