@@ -90,7 +90,10 @@ export function Navbar() {
             href="https://docs.virtuallabs.network"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(buttonVariants({ variant: "glow" }), "px-6 py-5 text-lg")}
+            className={cn(
+              buttonVariants({ variant: "glow", hoverStyle: "scale" }),
+              "px-6 py-5 text-lg"
+            )}
           >
             Join Whitelist
           </Link>
@@ -132,7 +135,10 @@ export function Navbar() {
                     href="https://www.vdex.trade"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={cn(buttonVariants({ variant: "glow" }), "w-full mt-4")}
+                    className={cn(
+                      buttonVariants({ variant: "glow", hoverStyle: "scale" }),
+                      "w-full mt-4"
+                    )}
                   >
                     Trade Now
                   </Link>
