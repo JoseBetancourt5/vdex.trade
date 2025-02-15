@@ -11,14 +11,23 @@ export function Audit() {
         Audited by
       </Heading>
       <Link
-        className="hover:bg-primary/30 px-8 py-3 border border-yellow-300 transition-colors duration-300"
+        className="group hover:bg-primary/30 px-8 py-3 border border-yellow-300 transition-colors duration-300"
         href="https://virtuallabs.network/audits"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="View audit report by Halborn"
       >
-        <Image src="/logos/halborn.avif" alt="Halborn" width={160} height={160} />
+        <Image
+          src="/logos/halborn.avif"
+          alt="Halborn"
+          width={160}
+          height={160}
+          priority={false}
+          loading="lazy"
+          className="group-hover:scale-105 transition-transform duration-300"
+        />
       </Link>
-      <Text>
+      <Text className="max-w-prose text-center">
         Security will always be our top priority, as we recognise its importance in building trust
         within the community
       </Text>

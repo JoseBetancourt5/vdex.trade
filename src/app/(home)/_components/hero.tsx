@@ -51,9 +51,10 @@ export function Hero() {
             <div className="-z-10 absolute inset-0 bg-purple-900/40 blur-[100px]" />
             <Image
               src="/trading_terminal.avif"
-              alt="VDEX Logo"
+              alt="VDEX Trading Terminal"
               width={1200}
               height={1200}
+              priority
               className="relative rounded-lg"
             />
           </div>
