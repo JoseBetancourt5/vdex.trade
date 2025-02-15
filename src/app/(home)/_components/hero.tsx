@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Heading, Text } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
-export default function Home() {
+export function Hero() {
   return (
     <div className="relative flex items-center py-20 min-h-full">
       {/* Background gradient mesh */}
