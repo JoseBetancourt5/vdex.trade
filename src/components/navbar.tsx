@@ -1,11 +1,10 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { cn } from '@/lib/utils';
+import Image from "next/image";
+import Link from "next/link";
+import * as React from "react";
 
-import { buttonVariants } from '@/components/ui/button';
+import { buttonVariants } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -14,20 +13,21 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 const moreLinks = [
   {
-    title: 'Team',
-    href: '/team',
+    title: "Team",
+    href: "/team",
   },
   {
-    title: 'Blog',
-    href: '/blog',
+    title: "Blog",
+    href: "/blog",
   },
   {
-    title: 'Terms',
-    href: '/terms',
+    title: "Terms",
+    href: "/terms",
   },
 ];
 
@@ -57,7 +57,7 @@ export function Navbar() {
                 <NavigationMenuTrigger
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    'flex items-center text-lg p-0 hover:bg-transparent active:bg-transparent focus:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent'
+                    "flex items-center text-lg p-0 hover:bg-transparent active:bg-transparent focus:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent"
                   )}
                 >
                   More
@@ -89,8 +89,8 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              buttonVariants({ variant: 'link' }),
-              'hover:no-underline shadow-[inset_0_0_10px_rgba(124,58,237,0.8),0_0_10px_rgba(124,58,237,0.8)] px-6 py-5 border border-primary rounded-full text-white text-lg hover:scale-105 transition-all duration-300'
+              buttonVariants({ variant: "link" }),
+              "hover:no-underline shadow-[inset_0_0_10px_rgba(124,58,237,0.8),0_0_10px_rgba(124,58,237,0.8)] px-6 py-5 border border-primary rounded-full text-white text-lg hover:scale-105 transition-all duration-300"
             )}
           >
             Join Whitelist
@@ -110,7 +110,7 @@ function NavLink({
     <Link
       className={cn(
         navigationMenuTriggerStyle(),
-        'hover:bg-transparent active:bg-transparent focus:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent'
+        "hover:bg-transparent active:bg-transparent focus:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent"
       )}
       href={href}
       {...props}

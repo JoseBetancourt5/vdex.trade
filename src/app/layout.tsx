@@ -1,14 +1,15 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { Navbar } from '@/components/navbar';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-import './globals.css';
+import { Navbar } from "@/components/navbar";
 
-const inter = Inter({ subsets: ['latin'] });
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'VDEX | Degen Playground',
-  description: 'VDEX is the first omnichain perpDEX with no slippage and sustainable Bitcoin Yield',
+  title: "VDEX | Degen Playground",
+  description: "VDEX is the first omnichain perpDEX with no slippage and sustainable Bitcoin Yield",
 };
 
 export default function RootLayout({
