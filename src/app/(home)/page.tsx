@@ -1,3 +1,4 @@
+import { Audit } from "./_components/audit";
 import { Hero } from "./_components/hero";
 import { Partners } from "./_components/partners";
 import { PreferredChainSection } from "./_components/preferred-chain-section";
@@ -23,6 +24,7 @@ export default function Home() {
       <Hero />
       <PreferredChainSection />
       <Partners />
+      <Audit />
     </div>
   );
 }

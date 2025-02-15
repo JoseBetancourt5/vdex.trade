@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Section } from "@/components/section";
 import { buttonVariants } from "@/components/ui/button";
 import { Heading, Text } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
 export function Hero() {
   return (
-    <div className="relative flex items-center py-20 min-h-full">
+    <Section className="relative">
       {/* Content container */}
       <div className="mx-auto px-4 container">
         {/* Hero section */}
@@ -22,9 +23,9 @@ export function Hero() {
 
           <Text variant="lead" size="lg" className="mb-6 text-muted-foreground">
             The Degen Playground: Trade with{" "}
-            <span className="font-medium text-foreground">sub-millisecond finality</span>,{" "}
-            <span className="font-medium text-foreground">omnichain deposits</span>, and{" "}
-            <span className="font-medium text-foreground">full self-custody</span>.
+            <span className="font-medium text-white">sub-millisecond finality</span>,{" "}
+            <span className="font-medium text-white">omnichain deposits</span>, and{" "}
+            <span className="font-medium text-white">full self-custody</span>.
           </Text>
 
           <div className="flex md:flex-row flex-col justify-center items-center gap-4 mb-10 md:mb-20 pt-4">
@@ -58,6 +59,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </Section>
   );
 }

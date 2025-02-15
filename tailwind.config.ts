@@ -12,7 +12,7 @@ export default {
       colors: {
         // Dark purple background with light gray text
         background: "hsl(251 50% 5%)",
-        foreground: "hsl(251 5% 90%)",
+        foreground: "hsl(0 0% 100%)",
 
         // Black card with light gray text
         card: {

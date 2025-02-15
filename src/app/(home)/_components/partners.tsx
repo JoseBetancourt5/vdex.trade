@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { Section } from "@/components/section";
 import { Heading } from "@/components/ui/typography";
 
 const partners = [
@@ -14,7 +15,7 @@ const partners = [
 
 export function Partners() {
   return (
-    <div className="relative flex flex-col items-center gap-8 mx-auto py-12 md:py-24 w-full container">
+    <Section centerContent className="relative gap-8">
       {/* Background image */}
       <div
         className="-z-10 absolute inset-0"
@@ -25,7 +26,7 @@ export function Partners() {
         }}
       />
 
-      <Heading variant="h2" size="4xl">
+      <Heading variant="h3" size="3xl">
         Partners
       </Heading>
 
@@ -41,6 +42,6 @@ export function Partners() {
           />
         ))}
       </div>
-    </div>
+    </Section>
   );
 }

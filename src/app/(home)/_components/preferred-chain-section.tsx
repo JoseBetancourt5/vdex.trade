@@ -1,6 +1,7 @@
 import { Plus } from "lucide-react";
 import Image from "next/image";
 
+import { Section } from "@/components/section";
 import { Heading, Text } from "@/components/ui/typography";
 
 const chainLogos = [
@@ -17,7 +18,7 @@ const rightChains = chainLogos.slice(3);
 
 export function PreferredChainSection() {
   return (
-    <section className="flex flex-col justify-center items-center gap-20 sm:gap-24 px-4 min-h-screen overflow-hidden">
+    <Section centerContent className="gap-20 sm:gap-24 min-h-screen">
       {/* Chain Logos Row */}
       <div className="sm:flex sm:flex-nowrap justify-center items-center gap-4 grid grid-cols-1 w-full max-w-5xl">
         {/* Left Chain Logos */}
@@ -35,7 +36,7 @@ export function PreferredChainSection() {
         </Heading>
         <Text size="xl">Unlimited Chains, Unified Orderbook.</Text>
       </div>
-    </section>
+    </Section>
   );
 }
 
