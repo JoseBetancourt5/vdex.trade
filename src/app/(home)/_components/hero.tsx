@@ -8,12 +8,6 @@ import { cn } from "@/lib/utils";
 export function Hero() {
   return (
     <div className="relative flex items-center py-20 min-h-full">
-      {/* Background gradient mesh */}
-      <div className="-z-10 absolute inset-0">
-        <div className="bg-[radial-gradient(circle_at_bottom,_var(--tw-gradient-stops))] absolute inset-0 from-purple-900/20 via-background to-background" />
-        <div className="absolute inset-0 bg-[url('/mesh.png')] bg-no-repeat bg-center opacity-30" />
-      </div>
-
       {/* Content container */}
       <div className="mx-auto px-4 container">
         {/* Hero section */}
