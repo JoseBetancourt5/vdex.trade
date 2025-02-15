@@ -1,7 +1,9 @@
+import { Heading } from "@/components/ui/typography";
+
 export default function Home() {
   return (
     <div className="mx-auto px-4 py-8 container">
-      <h1>Hello World</h1>
+      <Heading variant="h1">Hello World</Heading>
     </div>
   );
 }
