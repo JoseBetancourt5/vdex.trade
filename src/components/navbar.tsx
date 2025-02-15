@@ -1,5 +1,6 @@
 "use client";
 
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
@@ -14,6 +15,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 
 const moreLinks = [
@@ -34,14 +36,14 @@ const moreLinks = [
 export function Navbar() {
   return (
     <header className="top-0 z-50 sticky bg-black/80 w-full">
-      <div className="flex items-center mx-auto py-10 h-16 container">
+      <div className="flex justify-between md:justify-start items-center mx-auto px-4 py-10 h-16 container">
         <div className="w-1/4">
           <Link href="/" className="flex items-center gap-2">
             <Image src="/vdex-logo.png" alt="VDEX Logo" width={100} height={100} />
           </Link>
         </div>
 
-        <div className="flex flex-grow justify-center items-center gap-4">
+        <div className="hidden md:flex flex-grow justify-center items-center gap-4">
           <NavLink
             href="https://docs.virtuallabs.network"
             target="_blank"
@@ -83,18 +85,61 @@ export function Navbar() {
           </NavigationMenu>
         </div>
 
-        <div className="flex justify-end w-1/4">
+        <div className="flex justify-end gap-4 w-1/4">
           <Link
             href="https://docs.virtuallabs.network"
             target="_blank"
             rel="noopener noreferrer"
-            className={cn(
-              buttonVariants({ variant: "link" }),
-              "hover:no-underline shadow-[inset_0_0_10px_rgba(124,58,237,0.8),0_0_10px_rgba(124,58,237,0.8)] px-6 py-5 border border-primary rounded-full text-white text-lg hover:scale-105 transition-all duration-300"
-            )}
+            className={cn(buttonVariants({ variant: "glow" }), "px-6 py-5 text-lg")}
           >
             Join Whitelist
           </Link>
+
+          <div className="md:hidden flex">
+            <Sheet>
+              <SheetTrigger asChild>
+                <button className="text-white hover:text-primary">
+                  <Menu className="w-6 h-6" />
+                  <span className="sr-only">Toggle menu</span>
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-black/80 border-primary">
+                <nav className="flex flex-col gap-3">
+                  <Link
+                    href="https://docs.virtuallabs.network"
+                    className="text-md text-white hover:text-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Docs
+                  </Link>
+                  <Link href="/data-room" className="text-md text-white hover:text-primary">
+                    About
+                  </Link>
+                  <Link href="/form" className="text-md text-white hover:text-primary">
+                    Integrate
+                  </Link>
+                  {moreLinks.map((link) => (
+                    <Link
+                      key={link.title}
+                      href={link.href}
+                      className="text-md text-white hover:text-primary"
+                    >
+                      {link.title}
+                    </Link>
+                  ))}
+                  <Link
+                    href="https://www.vdex.trade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(buttonVariants({ variant: "glow" }), "w-full mt-4")}
+                  >
+                    Trade Now
+                  </Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
@@ -110,7 +155,7 @@ function NavLink({
     <Link
       className={cn(
         navigationMenuTriggerStyle(),
-        "hover:bg-transparent active:bg-transparent focus:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent"
+        "bg-transparent hover:bg-transparent active:bg-transparent focus:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent"
       )}
       href={href}
       {...props}
