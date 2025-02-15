@@ -21,7 +21,7 @@ export function Hero() {
           <Heading
             variant="h1"
             size="5xl"
-            className="bg-clip-text bg-gradient-to-r from-white via-white/60 to-neutral-400 mb-10 text-transparent"
+            className="bg-clip-text bg-gradient-to-r from-white via-white/70 to-neutral-400 mb-10 text-transparent"
           >
             Omnichain PerpDex
           </Heading>
