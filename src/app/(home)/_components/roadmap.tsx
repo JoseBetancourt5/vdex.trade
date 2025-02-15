@@ -34,9 +34,9 @@ const ContentBlock = ({ title, description, features }: ContentBlockProps) => (
 
 const getStatusIcon = (status: TimelineItemType["status"]) =>
   status === "completed" ? (
-    <Check className="w-5 h-5 text-green-500" />
+    <Check className="w-5 h-5 text-primary" />
   ) : (
-    <Circle className="w-5 h-5 text-blue-500" />
+    <Circle className="w-5 h-5 text-secondary" />
   );
 
 const timelineData: TimelineItemType[] = [
