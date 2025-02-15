@@ -3,6 +3,7 @@ import { Features } from "./_components/features";
 import { Hero } from "./_components/hero";
 import { Partners } from "./_components/partners";
 import { PreferredChainSection } from "./_components/preferred-chain-section";
+import { Roadmap } from "./_components/roadmap";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <Partners />
       <Audit />
       <Features />
+      <Roadmap />
     </div>
   );
 }
