@@ -92,7 +92,7 @@ export function Navbar() {
             rel="noopener noreferrer"
             className={cn(
               buttonVariants({ variant: "glow", hoverStyle: "scale" }),
-              "px-6 py-5 text-lg"
+              "px-6 py-5 text-lg rounded-full"
             )}
           >
             Join Whitelist
@@ -132,12 +132,12 @@ export function Navbar() {
                     </Link>
                   ))}
                   <Link
-                    href="https://www.vdex.trade"
+                    href="https://dapp.vdex.trade"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
                       buttonVariants({ variant: "glow", hoverStyle: "scale" }),
-                      "w-full mt-4"
+                      "w-full mt-4 rounded-full"
                     )}
                   >
                     Trade Now
