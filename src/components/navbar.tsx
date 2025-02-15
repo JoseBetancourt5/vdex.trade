@@ -87,7 +87,7 @@ export function Navbar() {
                 <NavigationMenuTrigger
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    "flex items-center text-lg p-0 hover:bg-transparent active:bg-transparent focus:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent"
+                    "flex items-center text-lg p-0 hover:!bg-transparent active:bg-transparent focus:bg-transparent hover:text-primary data-[active]:bg-transparent data-[state=open]:bg-transparent"
                   )}
                 >
                   More
