@@ -7,8 +7,8 @@ import { Heading, Text } from "@/components/ui/typography";
 
 export function Footer() {
   return (
-    <footer className="bg-black py-12 md:py-16 w-full">
-      <div className="mx-auto px-4 container">
+    <footer className="bg-black mx-auto py-12 md:py-16 w-full">
+      <div className="mx-auto px-4 w-full max-w-7xl container">
         <div className="gap-8 grid grid-cols-1 lg:grid-cols-12">
           {/* Logo and Newsletter Section */}
           <div className="flex flex-col gap-8 lg:col-span-7">
@@ -44,7 +44,7 @@ export function Footer() {
           </div>
 
           {/* Resources and Social Links */}
-          <div className="lg:col-span-5">
+          <div className="lg:justify-self-end lg:col-span-5">
             <div className="gap-8 grid grid-cols-2">
               {/* Resources */}
               <div className="flex flex-col gap-4">
@@ -73,7 +73,7 @@ export function Footer() {
               </div>
 
               {/* Social */}
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col lg:justify-self-end gap-4">
                 <Heading variant="h3" size="base">
                   Social
                 </Heading>
