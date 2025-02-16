@@ -3,14 +3,15 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Heading, Text } from "@/components/ui/typography";
 
 export function Footer() {
   return (
-    <footer className="bg-black py-12 w-full text-white">
+    <footer className="bg-black py-12 md:py-16 w-full">
       <div className="mx-auto px-4 container">
         <div className="gap-8 grid grid-cols-1 lg:grid-cols-12">
           {/* Logo and Newsletter Section */}
-          <div className="space-y-8 lg:col-span-7">
+          <div className="flex flex-col gap-8 lg:col-span-7">
             <Link href="/" className="inline-block">
               <Image
                 src="/vdex-logo.png"
@@ -20,10 +21,10 @@ export function Footer() {
                 className="w-auto h-12"
               />
             </Link>
-            <div className="space-y-4 max-w-xl">
-              <h3 className="text-lg">
+            <div className="flex flex-col gap-4 max-w-xl">
+              <Heading variant="h3" size="lg">
                 Join our newsletter to stay up to date on features and releases.
-              </h3>
+              </Heading>
               <div className="flex gap-3">
                 <Input
                   type="email"
@@ -32,13 +33,13 @@ export function Footer() {
                 />
                 <Button>Subscribe</Button>
               </div>
-              <p className="text-gray-400 text-sm">
+              <Text size="sm" className="text-gray-400">
                 We care about your data in our{" "}
                 <Link href="/terms" className="text-primary hover:underline">
                   privacy policy
                 </Link>
                 .
-              </p>
+              </Text>
             </div>
           </div>
 
@@ -46,9 +47,11 @@ export function Footer() {
           <div className="lg:col-span-5">
             <div className="gap-8 grid grid-cols-2">
               {/* Resources */}
-              <div className="space-y-4">
-                <h3 className="font-semibold text-lg">Resources</h3>
-                <nav className="flex flex-col space-y-3">
+              <div className="flex flex-col gap-4">
+                <Heading variant="h3" size="lg">
+                  Resources
+                </Heading>
+                <nav className="flex flex-col gap-3">
                   <Link href="/blog" className="hover:text-primary transition-colors">
                     Blog
                   </Link>
@@ -70,61 +73,73 @@ export function Footer() {
               </div>
 
               {/* Social */}
-              <div className="space-y-4">
-                <h3 className="font-semibold text-lg">Social</h3>
-                <nav className="flex flex-col space-y-3">
+              <div className="flex flex-col gap-4">
+                <Heading variant="h3" size="lg">
+                  Social
+                </Heading>
+                <nav className="flex flex-col gap-3">
                   <Link
                     href="https://discord.com/invite/x9PPR2PAEf"
-                    className="inline-flex items-center gap-2 transition-colors"
+                    className="inline-flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Image
                       src="/icons/discord.png"
                       alt="Discord"
                       width={20}
                       height={20}
-                      className="w-5 h-5"
+                      className="w-4 h-4"
                     />
                   </Link>
                   <Link
                     href="https://x.com/0xVDEX"
-                    className="inline-flex items-center gap-2 transition-colors"
+                    className="inline-flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <Image src="/icons/x.avif" alt="X" width={20} height={20} className="w-5 h-5" />
+                    <Image src="/icons/x.avif" alt="X" width={20} height={20} className="w-4 h-4" />
                   </Link>
                   <Link
-                    href="https://x.com/0xVDEX"
-                    className="inline-flex items-center gap-2 transition-colors"
+                    href="https://zealy.io/cw/virtuallabs-9746/questboard"
+                    className="inline-flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Image
                       src="/icons/zealy.avif"
                       alt="Zealy"
                       width={20}
                       height={20}
-                      className="w-5 h-5"
+                      className="w-4 h-4"
                     />
                   </Link>
                   <Link
-                    href="https://linkedin.com/company/vdex"
-                    className="inline-flex items-center gap-2 transition-colors"
+                    href="https://www.linkedin.com/company/0xvirtuallabs/posts/?feedView=all"
+                    className="inline-flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Image
                       src="/icons/linkedin.avif"
                       alt="LinkedIn"
                       width={20}
                       height={20}
-                      className="w-5 h-5"
+                      className="w-4 h-4"
                     />
                   </Link>
                   <Link
-                    href="https://t.me/vdex"
-                    className="inline-flex items-center gap-2 transition-colors"
+                    href="https://t.me/VDEXcommunity"
+                    className="inline-flex items-center gap-2"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <Image
                       src="/icons/telegram.avif"
                       alt="Telegram"
                       width={20}
                       height={20}
-                      className="w-5 h-5"
+                      className="w-4 h-4"
                     />
                   </Link>
                 </nav>
