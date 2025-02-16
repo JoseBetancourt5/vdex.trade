@@ -1,12 +1,13 @@
-import { Heading } from "@/components/ui/typography";
+import { Section } from "@/components/section";
+import { Heading, Text } from "@/components/ui/typography";
 
 export default function BlogPage() {
   return (
-    <div className="mx-auto px-4 py-8 container">
+    <Section centerContent>
       <Heading variant="h1" size="4xl" className="mb-16 text-center">
-        Blog
+        Our Latest News
       </Heading>
-      <div className="mt-4">{/* Blog content will go here */}</div>
-    </div>
+      <Text className="text-muted-foreground">Coming Soon...</Text>
+    </Section>
   );
 }
