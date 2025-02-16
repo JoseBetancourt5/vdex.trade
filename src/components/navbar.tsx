@@ -115,7 +115,7 @@ export function Navbar() {
 
         <div className="flex justify-end gap-4 w-1/4">
           <Link
-            href="https://docs.virtuallabs.network"
+            href="https://virtuallabs.network/vdex-whitelist"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
