@@ -22,7 +22,7 @@ export function Footer() {
               />
             </Link>
             <div className="flex flex-col gap-4 max-w-xl">
-              <Heading variant="h3" size="lg">
+              <Heading variant="h3" size="base">
                 Join our newsletter to stay up to date on features and releases.
               </Heading>
               <div className="flex gap-3">
@@ -48,7 +48,7 @@ export function Footer() {
             <div className="gap-8 grid grid-cols-2">
               {/* Resources */}
               <div className="flex flex-col gap-4">
-                <Heading variant="h3" size="lg">
+                <Heading variant="h3" size="base">
                   Resources
                 </Heading>
                 <nav className="flex flex-col gap-3">
@@ -74,7 +74,7 @@ export function Footer() {
 
               {/* Social */}
               <div className="flex flex-col gap-4">
-                <Heading variant="h3" size="lg">
+                <Heading variant="h3" size="base">
                   Social
                 </Heading>
                 <nav className="flex flex-col gap-3">
