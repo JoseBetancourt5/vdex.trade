@@ -10,7 +10,7 @@ export default function DataRoomPage() {
   return (
     <Section className="mx-auto max-w-7xl">
       <Heading variant="h1" size="4xl" className="mb-16 text-center">
-        Data Room
+        About
       </Heading>
 
       <div className="gap-6 grid grid-cols-1 lg:grid-cols-2">
