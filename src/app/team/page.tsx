@@ -55,14 +55,14 @@ export default function TeamPage() {
       </Heading>
       <div className="gap-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {teamMembers.map((member) => (
-          <NeonCard key={member.name} {...member} />
+          <TeamMemberCard key={member.name} {...member} />
         ))}
       </div>
     </Section>
   );
 }
 
-interface NeonCardProps {
+interface TeamMemberCardProps {
   headerImgUrl: string;
   name: string;
   role: string;
@@ -70,23 +70,30 @@ interface NeonCardProps {
   color?: string;
 }
 
-function NeonCard({ headerImgUrl, name, role, twitterUrl, color = "#67bbf7" }: NeonCardProps) {
-  const gradientStyle = {
-    background: `linear-gradient(to bottom, ${color}90 0%, ${color}40 50%, transparent 100%)`,
-  };
-
+function TeamMemberCard({
+  headerImgUrl,
+  name,
+  role,
+  twitterUrl,
+  color = "#67bbf7",
+}: TeamMemberCardProps) {
   return (
     <div className="w-full max-w-xs overflow-hidden text-white">
       <div className="relative aspect-square">
         <Image
           src={headerImgUrl || "/placeholder.svg"}
-          alt=""
-          layout="fill"
+          alt={name}
+          fill
           objectFit="cover"
           priority
         />
       </div>
-      <div className="flex flex-col items-center gap-2 p-6 pb-12 text-center" style={gradientStyle}>
+      <div
+        className="flex flex-col items-center gap-2 p-6 pb-12 text-center"
+        style={{
+          background: `linear-gradient(to bottom, ${color}90 0%, ${color}40 50%, transparent 100%)`,
+        }}
+      >
         <h2 className="font-semibold text-3xl tracking-wide">{name}</h2>
         <p className="text-white/90 text-xl">{role}</p>
         <div className="flex items-center h-[44px]">

@@ -6,6 +6,60 @@ import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { Heading, Text } from "@/components/ui/typography";
 
+const RESOURCES = [
+  {
+    title: "Whitepaper",
+    icon: FileText,
+    href: "https://virtuallabs.network/whitepaper",
+  },
+  {
+    title: "VDEX",
+    icon: BarChart3,
+    href: "https://vdex.trade",
+  },
+  {
+    title: "Documentation",
+    icon: BookOpenText,
+    href: "https://docs.virtuallabs.network",
+  },
+  {
+    title: "Smart contracts",
+    icon: Code2,
+    href: "https://github.com/0xVirtualLabs/vdex-smart-contracts",
+  },
+] as const;
+
+const SOCIAL_LINKS = [
+  {
+    href: "https://www.linkedin.com/company/0xvirtuallabs/posts/?feedView=all",
+    icon: "/icons/linkedin.avif",
+    alt: "LinkedIn",
+    size: 20,
+    className: "w-5 h-5",
+  },
+  {
+    href: "https://x.com/0xVDEX",
+    icon: "/icons/x.avif",
+    alt: "X",
+    size: 20,
+    className: "w-4 h-4",
+  },
+  {
+    href: "https://discord.com/invite/x9PPR2PAEf",
+    icon: "/icons/discord.png",
+    alt: "Discord",
+    size: 20,
+    className: "w-5 h-5",
+  },
+] as const;
+
+const FEATURES = [
+  "Zero latency",
+  "ZeroGas",
+  "Zero wallet clicks",
+  "Full chain abstraction",
+] as const;
+
 export default function DataRoomPage() {
   return (
     <Section className="mx-auto max-w-7xl">
@@ -15,7 +69,7 @@ export default function DataRoomPage() {
 
       <div className="gap-6 grid grid-cols-1 lg:grid-cols-2">
         {/* Welcome Card */}
-        <div className="bg-card p-8 border border-border rounded-3xl">
+        <Card>
           <div className="flex flex-col gap-6">
             <Heading variant="h2" size="2xl">
               Welcome to <span className="text-muted-foreground">Virtual Labs Data Room</span>
@@ -44,76 +98,22 @@ export default function DataRoomPage() {
               </Button>
 
               <div className="flex gap-4">
-                <Link
-                  href="https://www.linkedin.com/company/0xvirtuallabs/posts/?feedView=all"
-                  className="inline-flex items-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src="/icons/linkedin.avif"
-                    alt="LinkedIn"
-                    width={20}
-                    height={20}
-                    className="w-5 h-5"
-                  />
-                </Link>
-                <Link
-                  href="https://x.com/0xVDEX"
-                  className="inline-flex items-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image src="/icons/x.avif" alt="X" width={20} height={20} className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="https://discord.com/invite/x9PPR2PAEf"
-                  className="inline-flex items-center gap-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src="/icons/discord.png"
-                    alt="Discord"
-                    width={20}
-                    height={20}
-                    className="w-5 h-5"
-                  />
-                </Link>
+                {SOCIAL_LINKS.map((link) => (
+                  <SocialLink key={link.alt} {...link} />
+                ))}
               </div>
             </div>
           </div>
-        </div>
+        </Card>
 
         {/* Resources Card */}
-        <div className="bg-card p-8 border border-border rounded-3xl">
+        <Card>
           <Heading variant="h2" size="2xl" className="mb-6">
             Resources
           </Heading>
 
           <div className="flex flex-col gap-2">
-            {[
-              {
-                title: "Whitepaper",
-                icon: FileText,
-                href: "https://virtuallabs.network/whitepaper",
-              },
-              {
-                title: "VDEX",
-                icon: BarChart3,
-                href: "https://vdex.trade",
-              },
-              {
-                title: "Documentation",
-                icon: BookOpenText,
-                href: "https://docs.virtuallabs.network",
-              },
-              {
-                title: "Smart contracts",
-                icon: Code2,
-                href: "https://github.com/0xVirtualLabs/vdex-smart-contracts",
-              },
-            ].map((resource) => (
+            {RESOURCES.map((resource) => (
               <Button
                 key={resource.title}
                 variant="outline"
@@ -133,10 +133,10 @@ export default function DataRoomPage() {
               </Button>
             ))}
           </div>
-        </div>
+        </Card>
 
         {/* About Card */}
-        <div className="bg-card p-8 border border-border rounded-3xl">
+        <Card>
           <Heading variant="h2" size="2xl" className="mb-6">
             About <span className="text-muted-foreground">Virtual Labs</span>
           </Heading>
@@ -151,20 +151,18 @@ export default function DataRoomPage() {
             </Text>
 
             <ul className="space-y-2">
-              {["Zero latency", "ZeroGas", "Zero wallet clicks", "Full chain abstraction"].map(
-                (item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <div className="bg-primary rounded-full w-1.5 h-1.5" />
-                    {item}
-                  </li>
-                )
-              )}
+              {FEATURES.map((feature) => (
+                <li key={feature} className="flex items-center gap-2">
+                  <div className="bg-primary rounded-full w-1.5 h-1.5" />
+                  {feature}
+                </li>
+              ))}
             </ul>
           </div>
-        </div>
+        </Card>
 
         {/* Coming Soon Card */}
-        <div className="bg-card p-8 border border-border rounded-3xl">
+        <Card>
           <div className="flex flex-col gap-6">
             <Heading variant="h2" size="base" className="text-primary uppercase">
               Coming soon
@@ -176,6 +174,9 @@ export default function DataRoomPage() {
               width={800}
               height={450}
               className="border border-border rounded-2xl"
+              priority
+              quality={85}
+              sizes="(max-width: 768px) 100vw, 800px"
             />
 
             <Button variant="outline" size="lg" className="w-full" asChild>
@@ -198,8 +199,28 @@ export default function DataRoomPage() {
                 achieve centralized exchange-style UX while maintaining decentralization.`}
             </Text>
           </div>
-        </div>
+        </Card>
       </div>
     </Section>
+  );
+}
+
+function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`bg-card p-8 border border-border rounded-3xl ${className}`}>{children}</div>
+  );
+}
+
+function SocialLink({ href, icon, alt, size, className }: (typeof SOCIAL_LINKS)[number]) {
+  return (
+    <Link
+      href={href}
+      className="inline-flex items-center gap-2"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Visit our ${alt} page`}
+    >
+      <Image src={icon} alt={alt} width={size} height={size} className={className} />
+    </Link>
   );
 }
