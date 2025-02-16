@@ -1,9 +1,10 @@
-import { Audit } from "./_components/audit";
-import { Features } from "./_components/features";
-import { Hero } from "./_components/hero";
-import { Partners } from "./_components/partners";
-import { PreferredChainSection } from "./_components/preferred-chain-section";
-import { Roadmap } from "./_components/roadmap";
+import { Audit } from "./sections/audit";
+import { CallToAction } from "./sections/call-to-action";
+import { Features } from "./sections/features";
+import { Hero } from "./sections/hero";
+import { Partners } from "./sections/partners";
+import { PreferredChainSection } from "./sections/preferred-chain";
+import { Roadmap } from "./sections/roadmap";
 
 export default function Home() {
   return (
@@ -28,8 +29,8 @@ export default function Home() {
       <Partners />
       <Audit />
       <Features />
-
       <Roadmap />
+      <CallToAction />
     </div>
   );
 }
