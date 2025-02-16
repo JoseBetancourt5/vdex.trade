@@ -5,41 +5,15 @@ import { Check, Circle } from "lucide-react";
 import { useRef } from "react";
 import type { ReactNode } from "react";
 
-interface TimelineItemType {
+import { Heading, Text } from "@/components/ui/typography";
+
+interface TimelineItem {
   title: string;
   status: "completed" | "upcoming";
   content: ReactNode;
 }
 
-interface ContentBlockProps {
-  title: string;
-  description: string;
-  features: Array<{ text: string; icon: ReactNode }>;
-}
-
-const ContentBlock = ({ title, description, features }: ContentBlockProps) => (
-  <div>
-    <h3 className="mb-2 font-bold text-white text-lg">{title}</h3>
-    <p className="mb-4 font-normal text-neutral-200 text-sm">{description}</p>
-    <div className="space-y-2 text-neutral-300 text-sm">
-      {features.map((feature, index) => (
-        <div key={index} className="flex items-center gap-2">
-          {feature.icon}
-          {feature.text}
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-const getStatusIcon = (status: TimelineItemType["status"]) =>
-  status === "completed" ? (
-    <Check className="w-5 h-5 text-primary" />
-  ) : (
-    <Circle className="w-5 h-5 text-secondary" />
-  );
-
-const timelineData: TimelineItemType[] = [
+const timelineData: TimelineItem[] = [
   {
     title: "DEC 2024",
     status: "completed",
@@ -118,11 +92,27 @@ const timelineData: TimelineItemType[] = [
   },
 ];
 
-interface TimelineItemProps {
-  item: TimelineItemType;
+/**
+ * The main export component that renders the roadmap timeline
+ */
+export function Roadmap() {
+  return (
+    <div className="bg-black min-h-screen text-white">
+      <div className="relative mx-auto px-4 md:px-8 py-16 max-w-4xl">
+        {/* Static vertical line */}
+        <div className="top-0 bottom-0 left-[calc(5rem-1px)] absolute bg-neutral-800 w-0.5" />
+        {timelineData.map((item, index) => (
+          <TimelineItem key={index} item={item} />
+        ))}
+      </div>
+    </div>
+  );
 }
 
-const TimelineItem = ({ item }: TimelineItemProps) => {
+/**
+ * A single timeline item component that displays the timeline item's title, status, and content
+ */
+function TimelineItem({ item }: { item: TimelineItem }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -147,24 +137,47 @@ const TimelineItem = ({ item }: TimelineItemProps) => {
       </div>
     </div>
   );
-};
+}
 
-const Timeline = ({ data }: { data: TimelineItemType[] }) => {
+interface ContentBlock {
+  title: string;
+  description: string;
+  features: Array<{ text: string; icon: ReactNode }>;
+}
+
+/**
+ * A content block component that displays the content block's title, description, and features
+ */
+function ContentBlock({ title, description, features }: ContentBlock) {
   return (
-    <div className="relative mx-auto px-4 md:px-8 py-16 max-w-4xl">
-      {/* Static vertical line */}
-      <div className="top-0 bottom-0 left-[calc(5rem-1px)] absolute bg-neutral-800 w-0.5" />
-      {data.map((item, index) => (
-        <TimelineItem key={index} item={item} />
-      ))}
+    <div>
+      <Heading variant="h3" className="mb-2" size="lg">
+        {title}
+      </Heading>
+      <Text className="mb-4 text-muted-foreground" size="sm">
+        {description}
+      </Text>
+      <div className="flex flex-col gap-2">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-center gap-2">
+            <div className="opacity-80">{feature.icon}</div>
+            <Text size="sm" className="text-muted-foreground">
+              {feature.text}
+            </Text>
+          </div>
+        ))}
+      </div>
     </div>
   );
-};
+}
 
-export function Roadmap() {
-  return (
-    <div className="bg-black min-h-screen text-white">
-      <Timeline data={timelineData} />
-    </div>
+/**
+ * A function that returns the status icon based on the status
+ */
+function getStatusIcon(status: TimelineItem["status"]) {
+  return status === "completed" ? (
+    <Check className="w-5 h-5 text-primary" />
+  ) : (
+    <Circle className="w-5 h-5 text-secondary" />
   );
 }
