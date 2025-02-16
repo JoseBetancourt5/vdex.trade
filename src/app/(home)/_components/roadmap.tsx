@@ -97,14 +97,18 @@ const timelineData: TimelineItem[] = [
  */
 export function Roadmap() {
   return (
-    <div className="bg-black min-h-screen text-white">
-      <div className="relative mx-auto px-4 md:px-8 py-16 max-w-4xl">
-        {/* Static vertical line */}
-        <div className="top-0 bottom-0 left-[calc(5rem-1px)] absolute bg-neutral-800 w-0.5" />
-        {timelineData.map((item, index) => (
-          <TimelineItem key={index} item={item} />
-        ))}
-      </div>
+    <div className="relative mx-auto px-4 md:px-8 py-16 max-w-4xl">
+      {/* Static vertical line */}
+      <div className="top-0 bottom-0 left-[calc(5rem-1px)] absolute bg-secondary/10 w-0.5" />
+      {/* Top blur overlay for the vertical line */}
+      <div className="top-0 left-[calc(5rem-1px)] absolute bg-gradient-to-b from-background via-background/50 to-transparent w-12 h-24 -translate-x-1/2" />
+      {/* Bottom blur overlay for the vertical line */}
+      <div className="bottom-0 left-[calc(5rem-1px)] absolute bg-gradient-to-t from-background via-background/50 to-transparent w-12 h-24 -translate-x-1/2" />
+
+      {/* Timeline items */}
+      {timelineData.map((item, index) => (
+        <TimelineItem key={index} item={item} />
+      ))}
     </div>
   );
 }

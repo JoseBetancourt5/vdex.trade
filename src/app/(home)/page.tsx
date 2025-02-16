@@ -28,6 +28,7 @@ export default function Home() {
       <Partners />
       <Audit />
       <Features />
+
       <Roadmap />
     </div>
   );
