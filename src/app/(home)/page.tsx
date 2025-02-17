@@ -27,7 +27,6 @@ export default function Home() {
       <Hero />
       <PreferredChainSection />
       <Partners />
-      <Audit />
       <Features />
       <Roadmap />
       <CallToAction />

@@ -2,9 +2,11 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Check, Circle } from "lucide-react";
+import Image from "next/image";
 import { useRef } from "react";
 import type { ReactNode } from "react";
 
+import { Section } from "@/components/section";
 import { Heading, Text } from "@/components/ui/typography";
 
 interface TimelineItem {
@@ -97,19 +99,32 @@ const timelineData: TimelineItem[] = [
  */
 export function Roadmap() {
   return (
-    <div className="relative mx-auto px-4 md:px-8 py-16 max-w-4xl">
-      {/* Static vertical line */}
-      <div className="top-0 bottom-0 left-[calc(5rem-1px)] absolute bg-secondary/10 w-0.5" />
-      {/* Top blur overlay for the vertical line */}
-      <div className="top-0 left-[calc(5rem-1px)] absolute bg-gradient-to-b from-background via-background/50 to-transparent w-12 h-24 -translate-x-1/2" />
-      {/* Bottom blur overlay for the vertical line */}
-      <div className="bottom-0 left-[calc(5rem-1px)] absolute bg-gradient-to-t from-background via-background/50 to-transparent w-12 h-24 -translate-x-1/2" />
+    <Section className="relative min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div className="-z-30 absolute inset-0 w-full h-full">
+        <Image
+          src="/grid_u_bg.avif"
+          alt="Grid Background"
+          width={1920}
+          height={1080}
+          priority
+          className="w-full h-full object-center object-cover pointer-events-none select-none contrast-125"
+        />
+      </div>
+      <div className="relative mx-auto px-4 md:px-8 py-16 max-w-4xl">
+        {/* Static vertical line */}
+        <div className="top-0 bottom-0 left-[calc(5rem-1px)] -z-10 absolute bg-secondary/10 w-0.5" />
+        {/* Top blur overlay for the vertical line */}
+        <div className="top-0 left-[calc(5rem-1px)] -z-20 absolute bg-gradient-to-b from-background via-background/50 to-transparent w-12 h-24 -translate-x-1/2" />
+        {/* Bottom blur overlay for the vertical line */}
+        <div className="bottom-0 left-[calc(5rem-1px)] -z-20 absolute bg-gradient-to-t from-background via-background/50 to-transparent w-12 h-24 -translate-x-1/2" />
 
-      {/* Timeline items */}
-      {timelineData.map((item, index) => (
-        <TimelineItem key={index} item={item} />
-      ))}
-    </div>
+        {/* Timeline items */}
+        {timelineData.map((item, index) => (
+          <TimelineItem key={index} item={item} />
+        ))}
+      </div>
+    </Section>
   );
 }
 

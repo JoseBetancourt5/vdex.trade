@@ -9,6 +9,14 @@ import { cn } from "@/lib/utils";
 export function Hero() {
   return (
     <Section className="relative">
+      {/* Background Image */}
+      <Image
+        src="/grid_sphere_bg.avif"
+        alt="Grid Sphere Background"
+        fill
+        priority
+        className="-z-20 brightness-90 object-center object-cover"
+      />
       {/* Content container */}
       <div className="mx-auto px-4 container">
         {/* Hero section */}

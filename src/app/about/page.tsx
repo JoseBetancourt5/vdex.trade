@@ -86,7 +86,7 @@ export default function DataRoomPage() {
               </Text>
             </div>
 
-            <div className="flex justify-between gap-6 mt-12">
+            <div className="flex sm:flex-row flex-col justify-between gap-6 mt-12">
               <Button size="lg" className="w-fit" asChild>
                 <Link
                   href="https://virtuallabs.network/pricing"
